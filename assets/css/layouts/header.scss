@@ -1,0 +1,75 @@
+/* ====================== 2, Header ====================== */
+.header {
+  height: 72px;
+  // border-bottom: 1px solid rgb(228, 224, 224);
+  box-shadow: 0 8px 20px 0 rgb(228, 224, 224); 
+  display: flex;
+  align-items: center;
+  
+
+  &__menu {
+    @include flex-center; 
+
+    &-bar {display: none;}
+    &-list {
+      margin-right: 2rem;
+      a {
+        color: black;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        
+      }
+      a:hover {
+        color: $color-home;
+      }
+      .menu__list-link--home {
+        color: $color-home;
+        background-color: transparent;
+      }
+      .menu__list-link--iteam::after {
+        font-family: "FontAwesome";
+        font-size: 10px;
+        content: "\f078";
+        padding: 0.5rem;
+        color: rgb(167, 164, 164);
+        text-align: center;
+        width: 30px;
+      }
+    }
+    &-search {
+      font-size: 1.2rem;
+      color: #63717f;
+      padding-left: 8rem;
+      #search {
+        border: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 990px) {
+ .header {
+  &__menu {
+    &-bar  { 
+      display: block ;
+        font-size: 1.5rem;
+        padding: 0.75rem 1rem; 
+        // background-color: #ddd;
+        // font-weight: 700;
+        color:#ddd;
+        border: none;
+        // border-radius: 0.5rem;
+        cursor: pointer;
+    } 
+   
+    &-list {
+      display: none;
+  
+    }
+  }
+ }
+}
